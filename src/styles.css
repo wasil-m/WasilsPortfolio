@@ -607,6 +607,32 @@ section { padding: clamp(4rem, 9vw, 7rem) 0; }
   transition: opacity 0.25s ease;
 }
 
+/* skip intro — sits under the console, discreet but findable */
+.boot-skip {
+  position: absolute;
+  bottom: clamp(1rem, 4vh, 2.4rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  padding: 0.5rem 1.1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  z-index: 5;
+}
+.boot-skip:hover, .boot-skip:focus-visible {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: rgba(232, 185, 74, 0.06);
+  outline: none;
+}
+.boot.entering .boot-skip { opacity: 0; transition: opacity 0.2s ease; }
+
 .console-brand {
   font-family: var(--pixel);
   font-size: 0.56rem;
@@ -757,10 +783,23 @@ section { padding: clamp(4rem, 9vw, 7rem) 0; }
 .face.b.held, .face.b:active { transform: translateY(14px); }
 
 @media (max-width: 620px) {
-  .console { width: 96vw; }
-  .face-btns { flex-direction: column; gap: 0.5rem; }
+  .console { width: 96vw; padding: 0.9rem; border-radius: 20px; }
+  .console-body { gap: 0.6rem; }
+  .dpad { width: 66px; height: 66px; }
+  .face-btns { flex-direction: column; gap: 0.4rem; }
+  .face { width: 40px; height: 40px; }
   .face.b { transform: none; }
   .face.b.held, .face.b:active { transform: translateY(2px); }
+  .screen-title h1 { font-size: clamp(0.7rem, 4.4vw, 1.1rem); }
+  .screen-prompt { top: 28%; }
+  .boot-skip { bottom: 1rem; font-size: 0.72rem; }
+}
+
+/* very short / landscape phones — keep the whole thing on one screen */
+@media (max-height: 520px) {
+  .boot { justify-content: flex-start; padding-top: 1.2rem; }
+  .console { width: min(92vw, 760px); }
+  .boot-skip { bottom: 0.6rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

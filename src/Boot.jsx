@@ -77,7 +77,7 @@ export default function Boot({ onEnter }) {
     let W = 0, H = 0, dpr = 1;
     let groundY = 0;
 
-    const player = { x: 40, y: 0, vx: 0, vy: 0, w: 16, h: 22, onGround: false, face: 1, walkT: 0 };
+    const player = { x: 30, y: 0, vx: 0, vy: 0, w: 13, h: 18, onGround: false, face: 1, walkT: 0 };
     let blocks = [];
     let coinsFx = [];
     let flag = { x: 0, raised: 0 };
@@ -92,19 +92,20 @@ export default function Boot({ onEnter }) {
       canvas.height = Math.round(H * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.imageSmoothingEnabled = false;
-      groundY = H - Math.max(26, Math.round(H * 0.16));
-      const s = Math.max(20, Math.round(H * 0.12));
+      groundY = H - Math.max(22, Math.round(H * 0.14));
+      // smaller blocks — capped so they never dominate a small screen
+      const s = Math.min(Math.max(16, Math.round(H * 0.085)), 42);
       // Reachability is set by physics, not screen size: a jump lifts the
       // player's head to (player.h + apex) above the ground, so block *bottoms*
       // must sit inside that envelope to be bumpable on any screen size.
       const apex = (JUMP * JUMP) / (2 * GRAVITY);
       const reach = player.h + apex;                 // ≈ head clearance
-      const lowBottom = groundY - reach * 0.55;
-      const highBottom = groundY - reach * 0.80;
+      const lowBottom = groundY - reach * 0.5;
+      const highBottom = groundY - reach * 0.72;
       blocks = [
-        { x: W * 0.30, y: lowBottom - s, s, bump: 0, hit: false },
+        { x: W * 0.28, y: lowBottom - s, s, bump: 0, hit: false },
         { x: W * 0.50 - s / 2, y: highBottom - s, s, bump: 0, hit: false },
-        { x: W * 0.70 - s, y: lowBottom - s, s, bump: 0, hit: false },
+        { x: W * 0.72 - s, y: lowBottom - s, s, bump: 0, hit: false },
       ];
       flag.x = W - Math.max(24, W * 0.08);
       player.y = Math.min(player.y, groundY - player.h);
@@ -335,6 +336,8 @@ export default function Boot({ onEnter }) {
           </div>
         </div>
       </div>
+
+      <button className="boot-skip" onClick={start}>Skip intro →</button>
     </div>
   );
 }
