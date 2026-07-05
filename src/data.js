@@ -6,7 +6,7 @@ export const projects = [
     desc: 'An end-to-end ML pipeline forecasting realised volatility from high-frequency market data, paired with an interactive dashboard so a non-technical trader could actually explore and trust the model.',
     metric: { label: 'Forecasting error reduced', num: '8.3%', extra: '· 112 stocks · 426k+ buckets' },
     stack: ['Python', 'LightGBM', 'Hidden Markov Models', 'Dash', 'SHAP'],
-    links: [{ label: 'GitHub', href: 'https://github.com/wasil-m' }],
+    links: [{ label: 'Video Demo', href: 'https://www.youtube.com/watch?v=DmLSGkFDIoo' }],
   },
   {
     title: "Alzheimer's Disease Classifier",
@@ -24,7 +24,7 @@ export const projects = [
     desc: 'A national-scale React platform supporting thousands of users across Australia. I built interactive 3D features and reusable components inside a production codebase with strict review standards.',
     metric: { label: 'Scale', num: '1000s', extra: 'of users nationwide' },
     stack: ['React', 'TypeScript', 'Three.js', 'Vite', 'Tailwind'],
-    links: [{ label: 'Website', href: 'msaaustralia.com' }],
+    links: [{ label: 'Website', href: 'https://msaaustralia.com' }],
   },
   {
     title: 'Wizard Tower Defence',
@@ -34,7 +34,7 @@ export const projects = [
     metric: { label: 'Built with', num: 'OOP + JUnit', extra: 'tested game logic' },
     stack: ['Java', 'Gradle', 'JUnit', 'Git'],
     links: [
-      { label: 'Demo', href: 'https://youtu.be/lGn5sjUwyZk' },
+      { label: 'Video Demo', href: 'https://youtu.be/lGn5sjUwyZk' },
     ],
   },
   {
