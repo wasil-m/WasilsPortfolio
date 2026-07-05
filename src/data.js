@@ -15,7 +15,7 @@ export const projects = [
     desc: 'A supervised classification system staging Alzheimer’s diagnosis from messy, multi-source clinical data — the real work was integrating three separate datasets into one clean modelling pipeline.',
     metric: { label: 'Held-out accuracy', num: '100%', extra: '· small clinical test set · 361 features' },
     stack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy'],
-    links: [{ label: 'GitHub', href: 'https://github.com/wasil-m' }],
+    links: [{ label: 'GitHub', href: 'https://github.com/wasil-m/Alzheimer-Prediction' }],
   },
   {
     title: 'National Student Platform',
@@ -24,7 +24,7 @@ export const projects = [
     desc: 'A national-scale React platform supporting thousands of users across Australia. I built interactive 3D features and reusable components inside a production codebase with strict review standards.',
     metric: { label: 'Scale', num: '1000s', extra: 'of users nationwide' },
     stack: ['React', 'TypeScript', 'Three.js', 'Vite', 'Tailwind'],
-    links: [{ label: 'GitHub', href: 'https://github.com/wasil-m' }],
+    links: [{ label: 'Website', href: 'msaaustralia.com' }],
   },
   {
     title: 'Wizard Tower Defence',
@@ -34,7 +34,6 @@ export const projects = [
     metric: { label: 'Built with', num: 'OOP + JUnit', extra: 'tested game logic' },
     stack: ['Java', 'Gradle', 'JUnit', 'Git'],
     links: [
-      { label: 'GitHub', href: 'https://github.com/wasil-m/TowerDefenceGame' },
       { label: 'Demo', href: 'https://youtu.be/lGn5sjUwyZk' },
     ],
   },
@@ -93,5 +92,5 @@ export const meta = {
   phone: '0402 388 731',
   location: 'Sydney, NSW',
   github: 'https://github.com/wasil-m',
-  linkedin: 'https://linkedin.com/in/wasilmahbub',
+  linkedin: 'https://www.linkedin.com/in/wasil-m-732425275/',
 };
